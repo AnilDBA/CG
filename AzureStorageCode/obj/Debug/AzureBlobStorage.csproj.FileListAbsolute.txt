@@ -1,0 +1,15 @@
+C:\Users\Anil\Documents\Projects\AzureBlobStorage\AzureBlobStorage\bin\Debug\AzureBlobStorage.exe.config
+C:\Users\Anil\Documents\Projects\AzureBlobStorage\AzureBlobStorage\bin\Debug\AzureBlobStorage.exe
+C:\Users\Anil\Documents\Projects\AzureBlobStorage\AzureBlobStorage\bin\Debug\AzureBlobStorage.pdb
+C:\Users\Anil\Documents\Projects\AzureBlobStorage\AzureBlobStorage\bin\Debug\Microsoft.Azure.KeyVault.Core.dll
+C:\Users\Anil\Documents\Projects\AzureBlobStorage\AzureBlobStorage\bin\Debug\Microsoft.WindowsAzure.Storage.dll
+C:\Users\Anil\Documents\Projects\AzureBlobStorage\AzureBlobStorage\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Anil\Documents\Projects\AzureBlobStorage\AzureBlobStorage\bin\Debug\Microsoft.Azure.KeyVault.Core.xml
+C:\Users\Anil\Documents\Projects\AzureBlobStorage\AzureBlobStorage\bin\Debug\Microsoft.WindowsAzure.Storage.pdb
+C:\Users\Anil\Documents\Projects\AzureBlobStorage\AzureBlobStorage\bin\Debug\Microsoft.WindowsAzure.Storage.xml
+C:\Users\Anil\Documents\Projects\AzureBlobStorage\AzureBlobStorage\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Anil\Documents\Projects\AzureBlobStorage\AzureBlobStorage\obj\Debug\AzureBlobStorage.csprojResolveAssemblyReference.cache
+C:\Users\Anil\Documents\Projects\AzureBlobStorage\AzureBlobStorage\obj\Debug\AzureBlobStorage.exe
+C:\Users\Anil\Documents\Projects\AzureBlobStorage\AzureBlobStorage\obj\Debug\AzureBlobStorage.pdb
+C:\Users\Anil\Documents\Projects\AzureBlobStorage\AzureBlobStorage\bin\Debug\Microsoft.Azure.Documents.ServiceInterop.dll
+C:\Users\Anil\Documents\Projects\AzureBlobStorage\AzureBlobStorage\bin\Debug\Cosmos.CRTCompat.dll
