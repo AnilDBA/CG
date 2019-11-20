@@ -1,0 +1,51 @@
+﻿body {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:12pt;
+    background-color:beige;
+}
+
+#lblError
+{
+	color: Red;
+}
+
+.GridHeaderStyles
+{
+	color: black;
+	background-color:lightgray;
+	border: 1px solid #89a7ca;
+}
+
+.GridRowStyles
+{
+	background-color: #f0fff0;
+}
+
+.GridAlternateRowStyles
+{
+	background-color: #FEFFF2;/*#fdf5e6;*/
+}
+
+.GridSelectedRowStyle
+{
+	background-color: #fdf5b1;
+}
+
+
+
+.GridFooterStyles
+{
+	color: black;
+	font-weight:bold;
+	background-image: url(images/date_bg.gif);
+	background-position: top center;
+	border: 1px solid #ffff00;
+}
+
+.GridPagerStyles
+{
+	color: black;
+	background-image: url(images/img09.jpg);
+	background-position: top center;
+	border: 1px solid #89a7ca;
+}
