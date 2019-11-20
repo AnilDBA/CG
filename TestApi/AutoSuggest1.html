@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="Scripts/jquery-1.10.2.js"></script>
+    <script src="Scripts/jquery.validate.js"></script>
+</head>
+<body><h1>AI tutorial</h1>
+    <form name="bing">
+        <h2>Autosuggest</h2>
+        <input type="text" list="dt1" name="query" size="80" placeholder="Autosuggest" autocomplete="off" onkeyup="autosuggest(this.value);">
+        <datalist id="dt1"></datalist>
+    </form>
+    <h2>Results</h2>
+    <div id="results">
+        <p>None yet.</p>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    function autosuggest(txt) {
+        // Replace <Subscription Key> with your valid subscription key.
+        var subscriptionKey = "187e6b23548a48bbb2d624daa886afec";
+
+        var uriBase = "https://api.cognitive.microsoft.com/bing/v7.0/Suggestions?q=" + encodeURIComponent(txt);
+        // Perform the REST API call.
+        $.ajax({
+            url: uriBase,
+            // Request headers.
+            beforeSend: function (xhrObj) {
+                xhrObj.setRequestHeader("Content-Type", "application/json");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
+            },
+            type: "GET",
+            // Request body.
+            data: '',
+        })
+        .done(function (data) {
+            console.log(data);
+            $("#results").html(JSON.stringify(data));
+        })
+        .fail(function (jqXHR, textStatus, errorThrown) {
+            // Display error message.
+            var errorString = (errorThrown === "") ?
+                "Error. " : errorThrown + " (" + jqXHR.status + "): ";
+            errorString += (jqXHR.responseText === "") ?
+                "" : (jQuery.parseJSON(jqXHR.responseText).message) ?
+                    jQuery.parseJSON(jqXHR.responseText).message :
+                        jQuery.parseJSON(jqXHR.responseText).error.message;
+            alert(errorString);
+        });
+    };
+</script>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TestWebAPIiseeSCHOOLModelStoreContainer" CdmEntityContainer="iseeSCHOOLEntities">
+    <EntitySetMapping Name="CLASSes">
+      <EntityTypeMapping TypeName="TestWebAPI.iseeSCHOOLModel.CLASS">
+        <MappingFragment StoreEntitySet="CLASS">
+          <ScalarProperty Name="C_ID" ColumnName="C_ID" />
+          <ScalarProperty Name="C_DIVISION" ColumnName="C_DIVISION" />
+          <ScalarProperty Name="C_CMTID" ColumnName="C_CMTID" />
+          <ScalarProperty Name="C_TEACHER" ColumnName="C_TEACHER" />
+          <ScalarProperty Name="C_YEAR" ColumnName="C_YEAR" />
+          <ScalarProperty Name="C_ENTRYUSER" ColumnName="C_ENTRYUSER" />
+          <ScalarProperty Name="C_ENTRYDATE" ColumnName="C_ENTRYDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DOCUMENTS">
+      <EntityTypeMapping TypeName="TestWebAPI.iseeSCHOOLModel.DOCUMENT">
+        <MappingFragment StoreEntitySet="DOCUMENTS">
+          <ScalarProperty Name="D_ID" ColumnName="D_ID" />
+          <ScalarProperty Name="D_FILE" ColumnName="D_FILE" />
+          <ScalarProperty Name="D_FOR" ColumnName="D_FOR" />
+          <ScalarProperty Name="D_REFID" ColumnName="D_REFID" />
+          <ScalarProperty Name="D_ENTRYUSER" ColumnName="D_ENTRYUSER" />
+          <ScalarProperty Name="D_ENTRYDATE" ColumnName="D_ENTRYDATE" />
+          <ScalarProperty Name="D_SIZE" ColumnName="D_SIZE" />
+          <ScalarProperty Name="D_EXT" ColumnName="D_EXT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLOYEE_DETAILS">
+      <EntityTypeMapping TypeName="TestWebAPI.iseeSCHOOLModel.EMPLOYEE_DETAILS">
+        <MappingFragment StoreEntitySet="EMPLOYEE_DETAILS">
+          <ScalarProperty Name="ED_ID" ColumnName="ED_ID" />
+          <ScalarProperty Name="ED_INITIAL" ColumnName="ED_INITIAL" />
+          <ScalarProperty Name="ED_NAMEF" ColumnName="ED_NAMEF" />
+          <ScalarProperty Name="ED_NAMEM" ColumnName="ED_NAMEM" />
+          <ScalarProperty Name="ED_NAMEL" ColumnName="ED_NAMEL" />
+          <ScalarProperty Name="ED_MOBILE" ColumnName="ED_MOBILE" />
+          <ScalarProperty Name="ED_SEX" ColumnName="ED_SEX" />
+          <ScalarProperty Name="ED_DESIGNATION" ColumnName="ED_DESIGNATION" />
+          <ScalarProperty Name="ED_JOINDATE" ColumnName="ED_JOINDATE" />
+          <ScalarProperty Name="ED_BIRTHDATE" ColumnName="ED_BIRTHDATE" />
+          <ScalarProperty Name="ED_EMAILID" ColumnName="ED_EMAILID" />
+          <ScalarProperty Name="ED_ENTRYUSER" ColumnName="ED_ENTRYUSER" />
+          <ScalarProperty Name="ED_ENTRYDATE" ColumnName="ED_ENTRYDATE" />
+          <ScalarProperty Name="ED_ACTIVE" ColumnName="ED_ACTIVE" />
+          <ScalarProperty Name="ED_TEACHER" ColumnName="ED_TEACHER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STUDENT_MST">
+      <EntityTypeMapping TypeName="TestWebAPI.iseeSCHOOLModel.STUDENT_MST">
+        <MappingFragment StoreEntitySet="STUDENT_MST">
+          <ScalarProperty Name="SM_ID" ColumnName="SM_ID" />
+          <ScalarProperty Name="SM_INITIAL" ColumnName="SM_INITIAL" />
+          <ScalarProperty Name="SM_NAMEF" ColumnName="SM_NAMEF" />
+          <ScalarProperty Name="SM_NAMEM" ColumnName="SM_NAMEM" />
+          <ScalarProperty Name="SM_NAMEL" ColumnName="SM_NAMEL" />
+          <ScalarProperty Name="SM_MOBILE" ColumnName="SM_MOBILE" />
+          <ScalarProperty Name="SM_SEX" ColumnName="SM_SEX" />
+          <ScalarProperty Name="SM_REGSDATE" ColumnName="SM_REGSDATE" />
+          <ScalarProperty Name="SM_BIRTHDATE" ColumnName="SM_BIRTHDATE" />
+          <ScalarProperty Name="SM_EMAILID" ColumnName="SM_EMAILID" />
+          <ScalarProperty Name="SM_EMAILIDP" ColumnName="SM_EMAILIDP" />
+          <ScalarProperty Name="SM_ENTRYUSER" ColumnName="SM_ENTRYUSER" />
+          <ScalarProperty Name="SM_ENTRYDATE" ColumnName="SM_ENTRYDATE" />
+          <ScalarProperty Name="SM_ACTIVE" ColumnName="SM_ACTIVE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Scripts/jquery-1.10.2.js"></script>
+    <script src="Scripts/jquery.validate.js"></script>
+</head>
+<body>
+    dsdffd
+    <div id="dvTest"></div>
+    <button onclick="testGETapi();">Get Web API</button> &nbsp; 
+    <button onclick="testPOSTapi();">POST Web API</button><br />
+    <button onclick="allStudentsGETapi();">All students Get Web API</button> &nbsp; <button onclick="    testPOSTapi();">School POST Web API</button><br /><br>
+    Student id <input type="text" id="txtStudID"/> 
+    <button onclick="GetStudentByID();">Get Student by ID</button> &nbsp; 
+    <br />
+    Student Name <input type="text" id="txtName" /><br />
+    Student Mobile <input type="text" id="txtMobile" /> 
+    <button onclick="UpdateStudentMobile();">Update Student Mobile</button> &nbsp; 
+    <!--<button onclick="UpdateStudentMobile_EntryDate();">Update Student Mobile With EntryDate Parameter</button> &nbsp;-->
+    <button onclick="UpdateStudentMobile_RouteMethod();">Update Student Mobile Route Method</button> &nbsp; 
+    <br /><br />
+    <table id="tbl1" border="1" cellspacing="0" cellpadding="1"></table>
+</body>
+</html>
+<script type="text/javascript">
+    $(document).ready();
+    var order = { orderid: 1, productid: 1, customer: 'Customer1' };
+    function testGETapi()        
+    {
+        $("#dvTest").html("");
+        $.ajax({
+            contentType: 'application/json',
+            type: "GET",
+            url: "api/Order?vb=12",
+            data: "{vb:12}",//JSON.stringify(order),
+            success: function (data) {
+                $("#dvTest").html(data);
+                //data.forEach(function (person) {
+                //    $("#dvTest").val($("#getPeopleResult").val() + person.name + "|");
+                //});
+            },
+            error: function (response) {
+                $("#dvTest").html(response.responseText);
+            }
+        });
+    }
+    function testPOSTapi() {
+        $("#dvTest").html("");
+        $.ajax({
+            contentType: 'application/json',
+            type: "POST",
+            url: "api/Order",//"api/Order?vb=12",
+            data: JSON.stringify(order),
+            success: function (data) {
+                $("#dvTest").html(data);
+                //data.forEach(function (person) {
+                //    $("#dvTest").val($("#getPeopleResult").val() + person.name + "|");
+                //});
+            },
+            error: function (response) {
+                $("#dvTest").html(response.responseText);
+
+            }
+        });
+    }
+
+    function allStudentsGETapi() {
+        $("#tbl1").html("");
+        $.ajax({
+            contentType: 'application/json',
+            type: "GET",
+            url: "api/School",
+            data: "",//JSON.stringify(order),
+            success: function (data) {            
+                var st = "";
+                console.log(data);
+                data.forEach(function (person) {
+                    st = st + person.SM_ID + "|" + person.SM_NAMEF + "|" + person.SM_NAMEM + "|" + person.SM_NAMEL;
+                });
+                $("#dvTest").html("success <br/>" + st);
+                myjson2table('tbl1', data);
+                //constructTable($("#tbl1",data));
+            },
+            error: function (response) {
+                console.log(response);
+                $("#dvTest").html(response.responseText);
+            }
+        });
+    }
+
+    function GetStudentByID() {
+        $("#dvTest").html("");
+        var jsn = "{id:'" + document.getElementById("txtStudID").value + "'}";
+        console.log(jsn);
+        $.ajax({
+            contentType: 'application/json',
+            type: "GET",
+            url: "api/School/" + encodeURI(document.getElementById("txtStudID").value),
+            data: "",//JSON.stringify(order),
+            success: function (data) {
+                console.log(data);
+                document.getElementById("txtName").value = data.SM_NAMEF + " " + data.SM_NAMEM + " " + data.SM_NAMEL;
+                document.getElementById("txtMobile").value = data.SM_MOBILE;
+                $("#dvTest").html("success");
+            },
+            error: function (response) {
+                console.log(response);
+                $("#dvTest").html(response.responseText);
+            }
+        });
+    }
+
+    function UpdateStudentMobile(id, mobile) {
+        $("#dvTest").html("");
+        var jsn = { stud_id: '', stud_mobile: '' };
+        jsn.stud_id = document.getElementById("txtStudID").value;
+        jsn.stud_mobile = document.getElementById("txtMobile").value;
+        console.log(JSON.stringify(jsn));
+        $.ajax({
+            contentType: 'application/json',
+            type: "POST",
+            url: "api/School", // works "api/School/UpdateStudentMobile",
+            data: JSON.stringify(jsn),
+            success: function (data) {
+                console.log(data);
+                //document.getElementById("txtName").value = data.SM_NAMEF + " " + data.SM_NAMEM + " " + data.SM_NAMEL;
+                //document.getElementById("txtMobile").value = data.SM_MOBILE;
+                $("#dvTest").html("success");
+            },
+            error: function (response) {
+                console.log(response);
+                $("#dvTest").html(response.responseText);
+            }
+        });
+    }
+
+    function UpdateStudentMobile_EntryDate(id, mobile) {
+        $("#dvTest").html("test");
+        //var vsn = { stud_id: document.getElementById("txtStudID").value, stud_mobile: document.getElementById("txtMobile").value };
+        //var jsn = { upd: vsn, updateEntryDate: true };
+        var jsn = { id: document.getElementById("txtStudID").value, mob: document.getElementById("txtMobile").value, updateEntryDate: true };
+        console.log(JSON.stringify(jsn));
+        $.ajax({
+            contentType: 'application/json',
+            type: "POST",
+            url: "api/School/UpdStudentMobile_EntryDate", // works "api/School",
+            data: JSON.stringify(jsn),
+            success: function (data) {
+                console.log(data);
+                //document.getElementById("txtName").value = data.SM_NAMEF + " " + data.SM_NAMEM + " " + data.SM_NAMEL;
+                //document.getElementById("txtMobile").value = data.SM_MOBILE;
+                $("#dvTest").html("success");
+            },
+            error: function (response) {
+                console.log(response);
+                $("#dvTest").html(response.responseText);
+            }
+        });
+    }
+
+    function UpdateStudentMobile_RouteMethod(id, mobile) {
+        $("#dvTest").html("");
+        var jsn = { stud_id: '', stud_mobile: '' };
+        jsn.stud_id = document.getElementById("txtStudID").value;
+        jsn.stud_mobile = document.getElementById("txtMobile").value;
+        console.log(JSON.stringify(jsn));
+        $.ajax({
+            contentType: 'application/json',
+            type: "POST",
+            url: "api/UpdStudentMobile",
+            data: JSON.stringify(jsn),
+            success: function (data) {
+                console.log(data);
+                //document.getElementById("txtName").value = data.SM_NAMEF + " " + data.SM_NAMEM + " " + data.SM_NAMEL;
+                //document.getElementById("txtMobile").value = data.SM_MOBILE;
+                $("#dvTest").html("success");
+            },
+            error: function (response) {
+                console.log(response);
+                $("#dvTest").html(response.responseText);
+            }
+        });
+    }
+
+</script>
+<script type="text/javascript">
+    function myjson2table(tbl, data) {
+        var st = "";
+        var hdr = "<tr>";
+        var boolHDR = true;
+        data.forEach(function (obj) {            
+            st = st + "<tr>";            
+            //console.log(obj);
+            for (var key in obj) {
+                //console.log(obj[key]);
+                if (boolHDR) {
+                    hdr = hdr + "<th>" + key + "</th>";
+                }
+                if (obj.hasOwnProperty(key)) {
+                    //console.log(obj[key]);
+                    st = st + "<td>" + obj[key] + "</td>";
+                }
+            }
+            boolHDR = false;
+            st = st + "</tr>";
+        });
+        $('#'+tbl).html(hdr + "</tr>" + st);
+    }
+
+</script>
